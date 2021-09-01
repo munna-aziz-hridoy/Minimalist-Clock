@@ -49,6 +49,9 @@ const clockText = () => {
         amPm = 'AM'
     }
     
+     if(hh == 0){
+           hh = 12;
+     }
 
     if(hh < 10){
         hh = `0${hh}`
