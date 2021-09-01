@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assests/css/style.css">
+
+    <!-- BOX ICON -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <title>Analog Clock</title>
+</head>
+<body>
+    <section class="clock container">
+        <div class="clock_container grid">
+            <div class="clock_content grid">
+                <div class="clock_circle">
+                    <span class="clock_twelve">12</span>
+                    <span class="clock_one"></span>
+                    <span class="clock_two"></span>
+                    <span class="clock_three">3</span>
+                    <span class="clock_four"></span>
+                    <span class="clock_five"></span>
+                    <span class="clock_six">6</span>
+                    <span class="clock_seven"></span>
+                    <span class="clock_eight"></span>
+                    <span class="clock_nine">9</span>
+                    <span class="clock_ten"></span>
+                    <span class="clock_eleven"></span>
+    
+                    <div class="clock_rounder"></div>
+                    <div class="clock_hours" id="clock-hours"></div>
+                    <div class="clock_minutes" id="clock-minutes"></div>
+                    <div class="clock_seconds" id="clock-seconds"></div>
+
+                    <div class="clock_theme">
+                        <i class='bx bxs-moon' id="theme-button"></i>
+                    </div>
+                </div>
+
+                <div class="clock_texts">
+                    <div class="clock_text">
+                        <span class="clock_text-hours" id="text-hours"></span>
+                        <span class="clock_text-minutes" id="text-minutes"></span>
+                        <span class="clock_text-ampm" id="text-ampm"></span>
+                    </div>
+    
+                    <div class="clock_date">
+                        <span class="clock_day" id="clock-day"></span>
+                        <span class="clock_month" id="clock-month"></span>
+                        <span class="clock_year" id="clock-year"></span>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="colors">
+                <div class="color_container-red"><i class='bx bxs-color-fill theme_buttons red' data-color="0" id="red"></i></div>
+                <div class="color_container-green"><i class='bx bxs-color-fill theme_buttons green' data-color="130" id="green"></i></div>
+                <div class="color_container-vio"><i class='bx bxs-color-fill theme_buttons vio' data-color="295" id="vio"></i></div>
+                <div class="color_container-blue"><i class='bx bxs-color-fill theme_buttons blue' data-color="230" id="blue"></i></div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <script src="assests/js/main.js"></script>
+</body>
+</html>

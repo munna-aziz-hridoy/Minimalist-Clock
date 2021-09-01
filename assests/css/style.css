@@ -1,0 +1,441 @@
+/* === google fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+/* === variable css === */
+
+:root{
+    --hue-color: 230;
+
+    /* colors */
+    --first-color: hsl(var(--hue-color), 60%, 45%);
+    --title-color: hsl(var(--hue-color), 60%, 15%);
+    --text-color: hsl(var(--hue-color), 12%, 35%);
+    --text-color-light: hsl(var(--hue-color), 12%, 65%);
+    --white-color: #fff;
+    --body-color: hsl(var(--hue-color), 24%, 94%);
+
+
+    /* font  */
+    --body-font: 'Poppins', sans-serif;
+
+    /* font size */
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+
+    /* font weight */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* margin */
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+
+    /* z index */
+    --z-tooltip: 10;
+    --z-top: 100;
+
+}
+
+@media screen and (min-width: 968px) {
+
+    :root{
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1.5rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    }
+}
+
+/* === Dark Theme === */
+
+
+body.dark-theme{
+    --title-color: hsl(var(--hue-color), 12%, 95%);
+    --text-color: hsl(var(--hue-color), 12%, 75%);
+    --body-color: hsl(var(--hue-color), 10%, 16%);
+}
+
+
+/* === Reusable css === */
+
+.container{
+    max-width: 968px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid{
+    display: grid;
+}
+
+/* === base === */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* === clock === */
+.clock_container{
+    height: 80vh;
+    grid-template-rows: 1fr max-content;
+    width: 330px;
+    margin: 3rem 0;
+    box-shadow: -6px -6px 16px var(--white-color),
+                 6px 6px 16px var(--text-color-light);
+    border-radius: 1rem;
+    
+}
+
+
+.clock_circle{
+    width: 200px;
+    height: 200px;
+    box-shadow: -6px -6px 16px var(--white-color),
+                6px 6px 16px hsl(var(--hue-color), 30%, 85%),
+                inset -6px -6px 16px var(--white-color),
+                inset 6px 6px 16px hsl(var(--hue-color), 30%, 85%);
+    border-radius: 50%;
+    border: 0.5rem solid transparent;
+    justify-self: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock_content{
+    align-self: center;
+    row-gap: 3.5rem;
+}
+
+
+.clock_twelve,
+.clock_one,
+.clock_two,
+.clock_three,
+.clock_four,
+.clock_five,
+.clock_six,
+.clock_seven,
+.clock_eight,
+.clock_nine,
+.clock_ten,
+.clock_eleven{
+    position: absolute;
+}
+
+.clock_one,
+.clock_two,
+.clock_four,
+.clock_five,
+.clock_seven,
+.clock_eight,
+.clock_ten,
+.clock_eleven{
+    width: 0.3rem;
+    height: 0.3rem;
+    background-color: var(--title-color);
+    border-radius: 50%;
+}
+
+.clock_twelve,
+.clock_three,
+.clock_six,
+.clock_nine{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    font-family: var(--body-font);
+    color: var(--title-color);
+}
+
+.clock_twelve{
+    top: var(--mb-0-75);
+}
+.clock_three{
+    right: var(--mb-0-75);
+}
+.clock_six{
+    bottom: var(--mb-0-75);
+}
+.clock_nine{
+    left: var(--mb-0-75);
+}
+
+.clock_one{
+    top: 1.65rem;
+    right: 3.15rem;
+}
+
+.clock_two{
+    top: 3.4rem;
+    right: 1.5rem;
+}
+
+.clock_four{
+    bottom: 3.4rem;
+    right: 1.5rem;
+}
+
+.clock_five{
+    bottom: 1.65rem;
+    right: 3.15rem;
+}
+
+.clock_seven{
+    bottom: 1.65rem;
+    left: 3.15rem;
+}
+
+.clock_eight{
+    bottom: 3.4rem;
+    left: 1.5rem;
+}
+
+.clock_ten{
+    top: 3.4rem;
+    left: 1.5rem;
+}
+
+.clock_eleven{
+    top: 1.65rem;
+    left: 3.15rem;
+}
+
+.clock_rounder{
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--first-color);
+    border: 2px solid var(--white-color);
+    border-radius: 50%;
+    z-index: var(--z-top);
+    box-shadow: -6px -6px 16px var(--white-color),
+                6px 6px 16px hsl(var(--hue-color), 30%, 85%);
+}
+
+.clock_hours,
+.clock_minutes,
+.clock_seconds{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.clock_hours{
+    width: 105px;
+    height: 85px;
+
+}
+
+.clock_hours::before{
+    content: '';
+    position: absolute;
+    width: 0.25rem;
+    height: 3rem;
+    background-color: var(--title-color);
+    border-radius: 5rem;
+}
+
+.clock_minutes{
+    width: 105px;
+    height: 105px;
+
+}
+
+.clock_minutes::before{
+    content: '';
+    position: absolute;
+    width: 0.2rem;
+    height: 3rem;
+    background-color: var(--first-color);
+    border-radius: 5rem;
+}
+
+.clock_seconds{
+    width: 105px;
+    height: 105px;
+
+}
+
+.clock_seconds::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 4.3rem;
+    background-color: hsl(0, 60%, 45%);
+    border-radius: 5rem;
+}
+
+.clock_text, .clock_date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.clock_text-hours,
+.clock_text-minutes{
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.clock_text-ampm{
+    font-size: var(--smaller-font-size);
+    margin-top: -2rem;
+    color: var(--title-color);
+}
+
+.clock_date{
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.clock_theme{
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    box-shadow: inset -6px -6px 16px var(--white-color),
+                inset 6px 6px 16px hsl(var(--hue-color), 30%, 85%);
+    padding: 0.4rem 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+
+/* === Color Change Buttons === */
+
+.color_container-red,
+.color_container-green,
+.color_container-blue,
+.color_container-vio{
+    position: absolute;
+    box-shadow: inset -6px -6px 16px var(--white-color),
+                inset 6px 6px 16px hsl(var(--hue-color), 30%, 85%);
+    padding: 0.4rem 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    right: 1.3rem;
+    
+}
+
+.color_container-red{
+    top: 9rem;
+    color: red;
+}
+.color_container-green{
+    top: 13rem;
+    color: green;
+
+}
+.color_container-vio{
+    top: 17rem;
+    color: #ac2eb8;
+}
+.color_container-blue{
+    top: 21rem;
+    color: #2e3cb8;
+}
+
+/* === Dark Theme Box Shadow === */
+
+.dark-theme .clock_circle{
+    box-shadow: -6px -6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+                6px 6px 16px hsla(var(--hue-color), 8%, 20%, 1),
+                inset -6px -6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+                inset 6px 6px 16px hsla(var(--hue-color), 8%, 20%, 1);
+}
+
+.dark-theme .clock_rounder, .dark-theme .clock_container{
+    box-shadow: -6px -6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+                6px 6px 16px hsla(var(--hue-color), 8%, 20%, 1);
+}
+
+.dark-theme .clock_theme{
+    box-shadow: inset -6px -6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+    inset 6px 6px 16px hsla(var(--hue-color), 8%, 20%, 1);
+}
+
+
+.dark-theme .color_container-red,
+.dark-theme .color_container-green,
+.dark-theme .color_container-blue,
+.dark-theme .color_container-vio{
+    box-shadow: inset -6px -6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+    inset 6px 6px 16px hsla(var(--hue-color), 8%, 20%, 1);
+}
+
+
+
+
+/* === Media Queries === */
+
+@media screen and (max-width: 539px) {
+
+    .clock_container{
+        height: 90vh;
+        margin: 1.7rem 0;
+    }
+    .clock_content{
+        row-gap: 1.5rem;
+    }
+
+    .colors{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 0;
+
+    }
+
+    .color_container-red,
+    .color_container-green,
+    .color_container-blue,
+    .color_container-vio{
+        position: inherit;
+        right: 0;
+        top: 0;
+    }
+    
+   
+}
+
+@media screen and (max-width: 390px) {
+    .clock_container{
+        width: 270px;
+    }
+    
+}
+
+
+
+
